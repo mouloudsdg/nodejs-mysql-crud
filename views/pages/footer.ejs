@@ -1,0 +1,23 @@
+    </div>
+    <script>
+      function script (id) {
+        if (document.getElementById(`div-${id}`).innerHTML =='') {
+          document.getElementById(`div-${id}`).innerHTML = `
+            <form class="ui reply form" action="/post/up/${id}" method="post">
+              <div class="field">
+                <input name ="post" type="text">
+              </div>
+              <button type='submit' class="ui primary submit labeled icon button">
+                <i class="icon edit"></i>Modifier
+              </button>
+            </form>` 
+        }
+        else 
+        document.getElementById(`div-${id}`).innerHTML = '' 
+      }
+    </script>
+  </body>
+</html>
+
+
+

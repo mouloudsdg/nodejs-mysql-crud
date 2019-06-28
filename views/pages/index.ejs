@@ -1,0 +1,42 @@
+<% include header%>
+
+<form action="/" method="post" class="ui form">
+  <div class="field">
+    <label for="post">Message</label>
+    <textarea name="post" id="post"></textarea>
+  </div>
+  <button type="submit" class="ui blue labeled submit icon button">
+    <i class="icon edit"></i>Envoyer
+  </button>
+</form>
+
+<div class="ui comments">
+  <h3 class="ui dividing header">Commentaires</h3>
+
+  <% for (post of posts) { %>
+    <div class="comment">
+      <a class="avatar" href="/post/<%= post.id %>">
+        <img src="https://cdn1.iconfinder.com/data/icons/avatar-3/512/Manager-512.png">
+      </a>
+      <div class="content">
+        <div class="metadata">
+          <div class="date">
+            <%= post.created_at.fromNow() %>
+          </div>
+        </div>
+        <div class="text">
+          <%= post.content %>
+        </div>
+        <div class="actions">
+          <a id="<%=post.id%>" onclick="script(this.id)"><i class="pencil alternate icon"></i></i>Modifier</a>
+          <a href="/post/del/<%=post.id%>"><i class="delete icon"></i></i>Supprimer</a>
+          <div id="div-<%=post.id%>"></div>
+        </div>
+        </div>
+      </div>
+      
+    <% } %>
+
+  </div>
+
+<% include footer%>

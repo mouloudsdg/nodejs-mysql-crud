@@ -1,0 +1,24 @@
+<% include header%>
+
+<div class="ui comments">
+  <h3 class="ui dividing header">Commentaires</h3>
+
+    <div class="comment">
+      <a class="avatar" href="/post/<%= post.id %>">
+        <img src="https://cdn1.iconfinder.com/data/icons/avatar-3/512/Manager-512.png">
+      </a>
+      <div class="content">
+        <div class="metadata">
+          <div class="date">
+            <%= post.created_at.fromNow() %>
+          </div>
+        </div>
+        <div class="text">
+          <%= post.content %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<% include footer%>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>nodejs-mysql-crud</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.css"/>
+</head>
+<body>
+  <div class="ui fixed inverted menu">
+    <a href="/" class="header item">Acceuil</a>
+  </div>
+  <div class="ui main container" style="margin-top: 7em; margin-bottom: 7em" >
+    <% if (locals.flash && locals.flash.error) { %>
+    <div class="ui negative message">
+      <%= flash.error %>
+    </div>
+    <% } %>
+    <% if (locals.flash && locals.flash.success) { %>
+      <div class="ui positive message">
+        <%= flash.success %>
+      </div>
+      <% } %>
